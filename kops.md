@@ -1,5 +1,5 @@
 # Kops - Kubernetes Operations
-Kops is Kubernetes cluster tool used to orchestrate the applications deployment against the cloud
+Kops is a Kubernetes cluster tool used to orchestrate the applications deployment against the cloud
 
 ### Cluster config
 
@@ -18,36 +18,58 @@ Edit cluster config, add your IP to kubernetesApiAccess and sshAccess to allow T
 `namespace`: brand
 
 #### export kubectl config
-`kops --state s3://<aws-s3-bucket> export kubecfg --name <cluster-name>`
+```
+kops --state s3://<aws-s3-bucket> export kubecfg --name <cluster-name>
+```
 
 #### validate a cluster
-`kops --state s3://<aws-s3-bucket> --name <k8s.brand.dnszone> validate cluster`
+```
+kops --state s3://<aws-s3-bucket> --name <k8s.brand.dnszone> validate cluster
+```
 
 #### cluster update
-`kops --state s3://<aws-s3-bucket> --name <k8s.brand.dnszone> --lifecycle-overrides 'IAMRole=ExistsAndWarnIfChanges,IAMRolePolicy=ExistsAndWarnIfChanges,IAMInstanceProfileRole=ExistsAndWarnIfChanges' update cluster`
+```
+kops --state s3://<aws-s3-bucket> --name <k8s.brand.dnszone> --lifecycle-overrides 'IAMRole=ExistsAndWarnIfChanges,IAMRolePolicy=ExistsAndWarnIfChanges,IAMInstanceProfileRole=ExistsAndWarnIfChanges' update cluster
+```
 
 #### confirm an update procedure
-`kops --state s3://<aws-s3-bucket> --name <k8s.brand.dnszone> --lifecycle-overrides 'IAMRole=ExistsAndWarnIfChanges,IAMRolePolicy=ExistsAndWarnIfChanges,IAMInstanceProfileRole=ExistsAndWarnIfChanges' update cluster --yes`
+```
+kops --state s3://<aws-s3-bucket> --name <k8s.brand.dnszone> --lifecycle-overrides 'IAMRole=ExistsAndWarnIfChanges,IAMRolePolicy=ExistsAndWarnIfChanges,IAMInstanceProfileRole=ExistsAndWarnIfChanges' update cluster --yes
+```
 
 #### edit cluster configuration
-`kops --state s3://<aws-s3-bucket> --name <k8s.brand.dnszone> edit cluster`
+```
+kops --state s3://<aws-s3-bucket> --name <k8s.brand.dnszone> edit cluster
+```
 
 ### Kubectl commands
 
 #### list running pods
-`kubectl -n namespace get pods`
+```
+kubectl -n namespace get pods
+```
 
 #### get logs
-`kubectl -n namespace logs pod_name`
+```
+kubectl -n namespace logs pod_name
+```
 
 #### list deployments
-`kubectl -n namespace get deployments`
+```
+kubectl -n namespace get deployments
+```
 
 #### edit a deployment
-`kubectl -n namespace edit deployment deployment_name`
+```
+kubectl -n namespace edit deployment deployment_name
+```
 
 #### list secrets
-`kubectl -n namespace get secrets`
+```
+kubectl -n namespace get secrets
+```
 
 #### show contents of a secret
-`kubectl -n namespace get secrets secret_name -o yaml`
+```
+kubectl -n namespace get secrets secret_name -o yaml
+```
