@@ -1,4 +1,4 @@
-# Processes in linux
+# processes in linux
 a process refers to a program in execution; it is a running instance of a program. It is made up of the program instruction, data read from files, other programs or input from a system user
 
 ### types of processes
@@ -8,7 +8,7 @@ there are fundamentally two types of processes in linux
 
 * background processes (also referred to as non-interactive/automatic processes) – are processes not connected to a terminal; they don’t expect any user input
 
-#### ps
+### ps
 list process running owned by the user running the command
 ```
 $ ps
@@ -17,10 +17,10 @@ $ ps
  2943 pts/1    00:00:00 ps
 ```
 
-#### ps -a
+### ps -a
 list all the process running in the system
 
-#### pgrep
+### pgrep
 the pgrep command allows you to obtain the process id of a running program by specifying the name
 ```
 $ pgrep ssh
@@ -29,14 +29,13 @@ $ pgrep ssh
 32694
 ```
 
-#### kill
+### kill
 a process can be terminated using the `kill` command plus the process `id`
-```
-$ kill 466
-```
 
-#### pkill
+    kill 466
+
+
+### pkill
 the pkill command allows you to kill a program specifying the program's name: ex. `ssh`
-```
-$ pkil ssh
-```
+
+    pkil ssh

@@ -1,16 +1,18 @@
-# Networking
+# networking
 
 ### linux
+`ipconfig` command: list network devices
 
-#### list network devices
-
-```
-ifconfig
-```
+    ifconfig
 
 #### modify mac address
-```
-ifconfig <device> down
-ifconfig <device> hw ether <mac-address-id>
-ifconfig <device> up
-```
+
+    ifconfig <device> down
+    ifconfig <device> hw ether <mac-address-id>
+    ifconfig <device> up
+
+
+### macos
+
+
+### windows

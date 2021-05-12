@@ -1,7 +1,7 @@
 # file system management
 file system administration tasks
 
-#### df
+### df
 show disk information
 ```
 $ df
